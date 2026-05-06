@@ -1,0 +1,40 @@
+# ============================================================
+# Dipendenze per i notebook 03-Neural_Networks
+# Compatibile con: Linux, Windows, macOS (Intel e Apple Silicon)
+#
+# Installazione:
+#   pip install -r requirements.txt
+#
+# Le dipendenze condizionali usano i PEP 508 environment markers:
+# pip le valuta automaticamente al momento dell'installazione
+# rilevando sistema operativo e architettura della macchina corrente.
+# ============================================================
+
+# Ambiente Jupyter (per eseguire i notebook .ipynb in locale)
+# jupyterlab offre l'interfaccia moderna; notebook quella classica.
+# Entrambi sono opzionali se si usa Google Colab.
+jupyterlab>=4.0.0
+ipykernel>=6.25.0
+
+# Calcolo numerico
+numpy>=1.24.0,<2.0.0
+
+# Analisi dati
+pandas>=2.0.0
+
+# Visualizzazione
+matplotlib>=3.7.0
+
+# Machine learning (include fetch_openml, StandardScaler, KNN, ecc.)
+scikit-learn>=1.3.0
+
+# Dipendenza di scikit-learn
+scipy>=1.11.0
+
+# Reti neurali e TensorFlow Lite
+# Versione 2.13+ supporta tutte le piattaforme con un unico pacchetto
+tensorflow==2.14.1
+
+# Accelerazione GPU su macOS Apple Silicon (M1/M2/M3/M4)
+# Installato SOLO se: sistema = macOS E architettura = arm64
+tensorflow-metal; sys_platform == "darwin" and platform_machine == "arm64"
